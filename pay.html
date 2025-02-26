@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Selection</title>
+    <link rel="icon" href="assets/images/favicon.ico">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="pay.css">
+</head>
+<body>
+    <div class="container" id="main-container">
+        <p><span style="color: rgb(98, 98, 255); font-weight: bold;">Dear customer you have to pay only amount of 500rwf cash. </span></p>
+        <h2>Select Payment Method</h2>
+        <div class="payment-option" onclick="showPage('bank')">
+            <input type="radio" name="payment" id="bank" value="bank">
+          <i class='bx bxs-bank'></i>
+            <span>Bank Transfer</span>
+        </div>
+        
+        <div class="payment-option" onclick="showPage('paypal')">
+            <input type="radio" name="payment" id="paypal" value="paypal">
+            <i class='bx bxl-paypal icon'></i>
+            <span>PayPal</span>
+        </div>
+        
+        <div class="payment-option" onclick="showPage('momo')">
+            <input type="radio" name="payment" id="momo" value="momo">
+            <i class='bx bx-mobile-alt icon'></i>
+            <span>MTN MoMo</span>
+        </div>
+
+        <div class="payment-option" onclick="showPage('airtel')">
+            <input type="radio" name="payment" id="airtel" value="airtel">
+            <i class='bx bxl-airtel icon'></i>
+            <span>Airtel Money</span>
+        </div>
+
+        <div class="payment-option" onclick="showPage('tigo')">
+            <input type="radio" name="payment" id="tigo" value="tigo">
+            <i class='bx bxl-tigo icon'></i>
+            <span>Tigo Cash</span>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loading-overlay">
+        <div class="loading-message">
+            <p>Processing transfer...</p>
+            <div class="dots">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bank Page -->
+    <div class="page" id="bank-page">
+        <h2>Bank Transfer Terms</h2>
+        <p>Complete the transfer within 24 hours to Bika Doc Hub.</p>
+        <label for="bank-details">Enter recipient bank details:</label>
+        <input type="text" id="bank-details" class="input-field" placeholder="Bank Account Number">
+        <input type="text" id="bank-name" class="input-field" placeholder="Bank Name">
+        <input type="text" id="routing-code" class="input-field" placeholder="Enter your PIN">
+        <button onclick="goBack()">Back</button>
+        <button onclick="confirmTransfer('bank')">Confirm Transfer</button>
+    </div>
+
+    <!-- PayPal Page -->
+    <div class="page" id="paypal-page">
+        <h2>PayPal Terms</h2>
+        <p>A 5% transaction fee applies for PayPal payments.</p>
+        <label for="paypal-email">Enter PayPal recipient email:bigsamdmd@gmail.com</label>
+        <input type="email" id="paypal-email" class="input-field" placeholder="Recipient Email">
+        <input type="number" id="paypal-amount" class="input-field" placeholder="Amount to Send">
+        <label for="paypal-currency">Select Currency:</label>
+        <select id="paypal-currency" class="input-field">
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="GBP">FRW</option>
+            <option value="EUR">SHILNGS</option>
+            <option value="GBP">GBP</option>
+        </select>
+        <input type="number" id="paypal-amount" class="input-field" placeholder=" Enter PIN">
+        <button onclick="goBack()">Back</button>
+        <button onclick="confirmTransfer('paypal')">Confirm Transfer</button>
+    </div>
+
+    <!-- MTN MoMo Page -->
+    <div class="page" id="momo-page">
+        <h2>MTN MoMo Terms</h2>
+        <p>Ensure you have sufficient balance in your MoMo account.</p>
+        <label for="momo-phone">Enter recipient MoMo phone number:0786210315</label>
+        <input type="text" id="momo-phone" class="input-field" placeholder="Recipient Phone Number">
+        <input type="number" id="momo-amount" class="input-field" placeholder="Amount to Send">
+        <input type="number" id="momo-amount" class="input-field" placeholder="Enter PIN">
+        <button onclick="goBack()">Back</button>
+        <button onclick="confirmTransfer('momo')">Confirm Transfer</button>
+    </div>
+
+    <!-- Airtel Page -->
+    <div class="page" id="airtel-page">
+        <h2>Airtel Money Terms</h2>
+        <p>Complete the transfer within 12 hours to Airtel Money.</p>
+        <label for="airtel-phone">Enter recipient Airtel number:0726210315</label>
+        <input type="text" id="airtel-phone" class="input-field" placeholder="Recipient Phone Number">
+        <input type="number" id="airtel-amount" class="input-field" placeholder="Amount to Send">
+        <input type="number" id="momo-amount" class="input-field" placeholder="Enter PIN">
+        <button onclick="goBack()">Back</button>
+        <button onclick="confirmTransfer('airtel')">Confirm Transfer</button>
+    </div>
+
+    <!-- Tigo Page -->
+    <div class="page" id="tigo-page">
+        <h2>Tigo Cash Terms</h2>
+        <p>Ensure the recipient's Tigo account is active.</p>
+        <label for="tigo-phone">Enter recipient Tigo phone number:0736210315</label>
+        <input type="text" id="tigo-phone" class="input-field" placeholder="Recipient Phone Number">
+        <input type="number" id="tigo-amount" class="input-field" placeholder="Amount to Send">
+        <input type="number" id="momo-amount" class="input-field" placeholder="Enter PIN">
+        <button onclick="goBack()">Back</button>
+        <button onclick="confirmTransfer('tigo')">Confirm Transfer</button>
+    </div>
+    <script src="pay.js"></script>      
+</body>
+</html>

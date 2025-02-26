@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lost Document Finder Form</title>
+    <link rel="icon" href="assets/images/favicon.ico">
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="form.css">
+    <!-- Link to Boxicons CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+    <div class="form-container">
+        <form id="documentForm">
+            <h2>Lost Document Finder</h2>
+            <div class="input-group">
+                <i class="bx bx-user"></i>
+                <input type="text" id="fullName" placeholder="Full Name" required>
+            </div>
+            <div class="input-group">
+                <i class="bx bx-calendar"></i>
+                <input type="date" id="dob" placeholder="Date of Birth" required>
+            </div>
+            <div class="input-group">
+                <i class="bx bx-home"></i>
+                <input type="text" id="address" placeholder="Address" required>
+            </div>
+            <div class="input-group">
+                <i class="bx bx-phone"></i>
+                <input type="tel" id="phone" placeholder="Phone Number" required>
+            </div>
+            <div class="input-group">
+                <i class="bx bx-envelope"></i>
+                <input type="email" id="email" placeholder="Email Address" required>
+            </div>
+            <div class="input-group">
+                <i class="bx bx-flag"></i>
+                <input type="text" id="Country" placeholder="Country" required>
+            </div>
+            <div class="input-group">
+                <i class="bx bx-genderless"></i>
+                <input type="text" id="gender" placeholder="Gender" required>
+            </div>
+            <div class="input-group">
+                <i class="bx bx-globe"></i>
+                <input type="text" id="Type of document" placeholder="Type of document" required>
+            </div>
+            <div class="input-group">
+                <label for="profilePicture" class="profile-pic-label">
+                    <i class="bx bx-plus"></i> Add Profile Picture
+                </label>
+                <input type="file" id="profilePicture" accept="image/*" style="display: none;">
+                <img id="profilePicPreview" src="" alt="Profile Picture" style="display: none;">
+            </div>
+            <button type="submit">Submit</button>
+            <br>
+            <button id="goBackButton"><i class="fa-solid fa-arrow-left"></i> Go Back</button>
+
+        </form>
+    </div>
+
+    <div class="result-container" style="display: none;">
+        <h2>Submitted Information</h2>
+        <div class="result">
+            <div class="result-image">
+                <img id="resultProfilePic" src="" alt="Profile Picture">
+            </div>
+            <div class="result-details">
+                <button id="goBackButton"><i class="fa-solid fa-arrow-left"></i> Go Back</button>
+
+                <p><strong>Full Name:</strong> <span id="resultFullName"></span></p>
+                <p><strong>Date of Birth:</strong> <span id="resultDob"></span></p>
+                <p><strong>Address:</strong> <span id="resultAddress"></span></p>
+                <p><strong>Phone Number:</strong> <span id="resultPhone"></span></p>
+                <p><strong>Email Address:</strong> <span id="resultEmail"></span></p>
+                <p><strong>Country:</strong> <span id="resultCountry"></span></p>
+                <p><strong>Gender:</strong> <span id="resultGender"></span></p>
+                <p><strong>Type of document:</strong> <span id="resultType of document"></span></p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Link to external JavaScript file -->
+    <script src="form.js"></script>
+
+</body>
+</html>

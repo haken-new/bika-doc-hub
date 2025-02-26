@@ -1,0 +1,166 @@
+document.addEventListener("DOMContentLoaded", () => {
+    const menuIcon = document.querySelector(".menu-icon");
+    const navLinks = document.querySelector(".nav-links");
+    const settingsIcon = document.querySelector(".settings-icon");
+    const settingsMenu = document.querySelector(".settings-menu");
+    const toggleThemeBtn = document.getElementById("toggle-theme");
+    const body = document.body;
+
+    // Toggle Mobile Menu
+    menuIcon.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+    });
+
+    // Toggle Settings Menu
+    settingsIcon.addEventListener("click", () => {
+        settingsMenu.style.display = settingsMenu.style.display === "block" ? "none" : "block";
+    });
+
+    // Toggle Dark Mode
+    toggleThemeBtn.addEventListener("click", () => {
+        body.classList.toggle("dark-mode");
+        if (body.classList.contains("dark-mode")) {
+            toggleThemeBtn.innerHTML = "<i class='bx bx-sun'></i> Light Mode";
+        } else {
+            toggleThemeBtn.innerHTML = "<i class='bx bx-moon'></i> Dark Mode";
+        }
+    });
+
+    // Close settings menu when clicking outside
+    document.addEventListener("click", (event) => {
+        if (!settingsIcon.contains(event.target) && !settingsMenu.contains(event.target)) {
+            settingsMenu.style.display = "none";
+        }
+    });
+});
+//---test---//
+let slideIndex = 0;
+
+function showSlides() {
+    let items = document.querySelectorAll('.testimonial-item');
+    
+    // Hide all testimonials
+    items.forEach(item => {
+        item.classList.remove('active');
+    });
+    
+    // Show the next testimonial
+    slideIndex++;
+    if (slideIndex > items.length) {
+        slideIndex = 1;
+    }
+
+    items[slideIndex - 1].classList.add('active');
+    
+    // Change slide every 2 seconds
+    setTimeout(showSlides, 3000); 
+}
+
+// Initialize the slideshow
+showSlides();
+
+// back to top
+const backToTopButton = document.getElementById("backToTop");
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 300) {
+                backToTopButton.style.opacity = "1";
+                backToTopButton.style.visibility = "visible";
+            } else {
+                backToTopButton.style.opacity = "0";
+                backToTopButton.style.visibility = "hidden";
+            }
+        });
+
+        backToTopButton.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+   
+    // search bar
+    const pages = [
+        { name: "Hospital", id: "hospitalPage", link: "servicces.html" },
+        { name: "Schools", id: "schoolsPage", link: "#schoolsPage" },
+        { name: "Banks", id: "banksPage", link: "#banksPage" },
+        { name: "Markets", id: "marketsPage", link: "#marketsPage" },
+        { name: "Airport", id: "airportPage", link: "#airportPage" }
+    ];
+    
+    const searchInput = document.getElementById("searchInput");
+    const dropdownList = document.getElementById("dropdownList");
+    
+    // Function to show dropdown suggestions
+    searchInput.addEventListener("input", function() {
+        const query = searchInput.value.toLowerCase();
+        dropdownList.innerHTML = "";
+    
+        if (query.length === 0) {
+            dropdownList.style.display = "none";
+            return;
+        }
+    
+        const filteredPages = pages.filter(page => page.name.toLowerCase().includes(query));
+    
+        if (filteredPages.length === 0) {
+            dropdownList.innerHTML = "<div>No results found</div>";
+            dropdownList.style.display = "block";
+            return;
+        }
+    
+        filteredPages.forEach(page => {
+            const item = document.createElement("div");
+            item.textContent = page.name;
+            item.onclick = function() {
+                navigateToPage(page.id);
+            };
+            dropdownList.appendChild(item);
+        });
+    
+        dropdownList.style.display = "block";
+    });
+    
+    // Function to perform the search
+    function performSearch() {
+        const query = searchInput.value.toLowerCase();
+        const match = pages.find(page => page.name.toLowerCase() === query);
+    
+        if (match) {
+            navigateToPage(match.id);
+        } else {
+            alert("No results found");
+        }
+    }
+    
+    // Function to navigate to a specific page
+    function navigateToPage(pageId) {
+        document.querySelectorAll(".content-page").forEach(page => {
+            page.style.display = "none";
+        });
+    
+        const selectedPage = document.getElementById(pageId);
+        if (selectedPage) {
+            selectedPage.style.display = "block";
+        }
+    
+        dropdownList.style.display = "none";
+        searchInput.value = "";
+    }
+    // h1 auto effects
+    const textElement = document.querySelector("h1");
+    const text = "How can we help you?";
+    let index = 0;
+    let direction = 1;
+    
+    function animateText() {
+        textElement.style.display = "inline-block"; // Prevents layout shifts
+        textElement.textContent = text.slice(0, index);
+        index += direction;
+        
+        if (index > text.length || index < 0) {
+            direction *= -1;
+            index += direction;
+        }
+        
+        setTimeout(animateText, 150); // Adjust speed here
+    }
+    
+    animateText();
