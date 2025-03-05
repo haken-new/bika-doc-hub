@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="icon" href="assets/images/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet">
+    <style>
+       /* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f7fa;
+}
+ 
+.translate-dropdown {
+            display: none;
+            position: absolute;
+            top: 30px;
+            left: -80px;
+            background: rgba(255, 255, 255, 0);
+            padding: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            z-index: 1000;
+        }
+/* Dashboard layout */
+.dashboard-container {
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 20px;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #2b3a42;
+    color: #fff;
+    padding: 20px;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.sidebar .profile-pic {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+}
+
+.sidebar h2 {
+    margin-top: 20px;
+}
+
+.sidebar p {
+    color: #f1c40f;
+    font-size: 16px;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-menu li {
+    margin: 10px 0;
+}
+
+.sidebar-menu li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+}
+
+.sidebar-menu li a:hover {
+    color: #f1c40f;
+}
+
+.contact-support {
+    margin-top: 20px;
+}
+
+.contact-support a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* Main content */
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #fff;
+    box-sizing: border-box;
+    margin-left: 20px;
+    text-align: center;
+}
+
+/* Header */
+.header h1 {
+    font-size: 24px;
+}
+
+/* Stats */
+.stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    font-size: 28px;
+    flex-wrap: wrap; /* Allows wrapping */
+}
+
+.stats div {
+    background-color: #ecf0f1;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    flex: 1;
+    margin: 10px;
+    min-width: 150px; /* Ensures boxes don’t shrink too much */
+}
+
+/* Welcome Message */
+.welcome-message {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.message-container {
+    display: flex;
+    align-items: center;
+    background-color: #ecf0f1;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.admin-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.message-text {
+    flex: 1;
+    max-width: 65%;
+}
+
+.message-text h2 {
+    font-size: 22px;
+    color: #34495e;
+}
+
+.message-text p {
+    color: #7f8c8d;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Animated heart */
+.animate-heart {
+    font-size: 40px;
+    color: #e74c3c;
+    margin-left: 20px;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.8; }
+}
+
+/* Join button */
+.join-btn {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+.join-btn:hover {
+    background-color: #2980b9;
+}
+
+/* Responsive Styles */
+
+/* Medium screens (tablets, small laptops) */
+@media (max-width: 1024px) {
+    .dashboard-container {
+        flex-wrap: wrap;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 15px;
+        text-align: center;
+    }
+
+    .main-content {
+        width: 100%;
+        padding: 15px;
+        margin-left: 0;
+    }
+
+    .stats {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .stats div {
+        width: 80%;
+        margin-bottom: 10px;
+    }
+
+    .welcome-message {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .message-container {
+        width: 100%;
+    }
+
+    .admin-img {
+        width: 60px;
+        height: 60px;
+        margin-right: 10px;
+    }
+
+    .message-text {
+        max-width: 100%;
+    }
+
+    .message-text h2 {
+        font-size: 20px;
+    }
+
+    .message-text p {
+        font-size: 14px;
+    }
+
+    .join-btn {
+        width: 100%;
+        padding: 12px;
+        font-size: 18px;
+    }
+}
+
+/* Small screens (mobile phones) */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .main-content {
+        padding: 10px;
+        margin-left: 0;
+    }
+
+    .stats div {
+        width: 100%;
+    }
+
+    .welcome-message {
+        flex-direction: column;
+    }
+
+    .message-container {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .admin-img {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 10px;
+    }
+
+    .message-text {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .message-text h2 {
+        font-size: 18px;
+    }
+
+    .message-text p {
+        font-size: 14px;
+    }
+
+    .join-btn {
+        font-size: 16px;
+    }
+}
+
+/* Extra Small screens (phones below 480px) */
+@media (max-width: 480px) {
+    .sidebar {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .message-text h2 {
+        font-size: 16px;
+    }
+
+    .message-text p {
+        font-size: 12px;
+    }
+
+    .join-btn {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .stats div {
+        padding: 15px;
+        font-size: 14px;
+    }
+}
+
+        /* Back to Top Button */
+        #back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            display: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        #back-to-top:hover {
+            background-color: #2980b9;
+        }
+
+        @media (max-width: 768px) {
+            #back-to-top {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <img src="assets/images/happy2.jpg" alt="Profile Picture" class="profile-pic">
+            <h2>NTARE Junior</h2>
+            <p class="pro-level">Dashboard</p>
+            <ul class="sidebar-menu">
+                <!-- Google Translate Dropdown -->
+            <li class="translate-container">
+                <i class='bx bx-world translate-icon' onclick="toggleGoogleTranslate()"></i>
+                <div id="google_translate_dropdown" class="translate-dropdown">
+                    <div id="google_translate_element"></div>
+                </div>
+            </li>
+            </ul>
+            <div class="contact-support">
+                <a href="contact-2.html">Having troubles? Contact us</a>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="header">
+                <h1>Good morning, Filip</h1>
+            </div>
+
+            <!-- Welcome Message -->
+            <div class="welcome-message">
+                <div class="message-container">
+                    <img src="assets/images/Big-sam.JPG" alt="Admin" class="admin-img">
+                    <div class="message-text">
+                        <h2>Welcome to the BIKA Doc Hub!</h2>
+                        <p>Hi there! I'm Samuel, the admin here at BIKA Doc Hub, where we help link lost and found documents. By joining us, you're part of a community that makes the world a little bit more connected.</p>
+                        <p>Keep uploading documents and keep the heart of this platform going! If you manage to upload over 20 documents, you may be the one to receive a special reward from us! ❤️</p>
+                    </div>
+                    <i class="bx bxs-heart animate-heart"></i>
+                </div>
+            </div>
+
+            <!-- Stats (Lost and Posted Documents) -->
+            <div class="stats">
+                <div class="lost-documents">
+                    <h2>Lost Documents Uploaded</h2>
+                    <p id="lost-documents" class="count">0</p>
+                </div>
+                <div class="posted-documents">
+                    <h2>Lost Documents Posted</h2>
+                    <p id="posted-documents" class="count">0</p>
+                </div>
+            </div>
+
+            <!-- Go Home Button -->
+            <div class="join-section">
+                <a href="index.html"><button id="go-home-btn" class="join-btn">Go Home</button></a>
+            </div>
+        </div>
+    </div>
+
+      <!-- Google Translate API -->
+      <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" onclick="scrollToTop()">
+        <i class='bx bx-chevron-up'></i>
+    </button>
+
+    <script>
+        // JavaScript for counting effect
+        function countUp(id, start, end, duration) {
+            let obj = document.getElementById(id);
+            let current = start;
+            let increment = (end - start) / duration;
+
+            let interval = setInterval(function() {
+                current += increment;
+                obj.textContent = Math.round(current);
+
+                if (current >= end) {
+                    clearInterval(interval);
+                }
+            }, 10000 / 90);  // Run at 60 FPS for smooth animation
+        }
+
+        // Start counting for lost documents (0 to 3) with a longer duration (e.g., 10 seconds)
+        countUp('lost-documents', 0, 3, 10);
+
+        // Start counting for found documents (0 to 6) with a longer duration (e.g., 12 seconds)
+        countUp('posted-documents', 0, 6, 12);
+
+        // Show or hide the back-to-top button
+        window.onscroll = function() {
+            let backToTop = document.getElementById("back-to-top");
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                backToTop.style.display = "block";
+            } else {
+                backToTop.style.display = "none";
+            }
+        };
+
+        // Scroll to top function
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+
+        function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+
+    // Apply saved language if it exists
+    const savedLang = getCookie('siteLang');
+    if (savedLang) {
+        setTimeout(() => {
+            document.querySelector('.goog-te-combo').value = savedLang;
+            document.querySelector('.goog-te-combo').dispatchEvent(new Event('change'));
+        }, 1000);
+    }
+}
+
+function toggleGoogleTranslate() {
+    let dropdown = document.getElementById("google_translate_dropdown");
+    dropdown.classList.toggle("active");
+}
+
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+
+
+// Function to set cookie
+function setCookie(name, value, days) {
+    let date = new Date();
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+    let expires = "expires=" + date.toUTCString();
+    document.cookie = name + "=" + value + ";" + expires + ";path=/";
+}
+
+// Function to get cookie
+function getCookie(name) {
+    let decodedCookies = decodeURIComponent(document.cookie);
+    let ca = decodedCookies.split(';');
+    for (let i = 0; i < ca.length; i++) {
+        let c = ca[i].trim();
+        if (c.indexOf(name + "=") === 0) {
+            return c.substring(name.length + 1, c.length);
+        }
+    }
+    return "";
+}
+
+// Save selected language in cookie
+window.addEventListener('load', function () {
+    setTimeout(() => {
+        const languageSelect = document.querySelector('.goog-te-combo');
+        if (languageSelect) {
+            languageSelect.addEventListener('change', function () {
+                setCookie('siteLang', languageSelect.value, 7);
+            });
+        }
+    }, 2000);
+});
+
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+}
+
+// Function to get the selected language from localStorage
+function getSavedLanguage() {
+    return localStorage.getItem("selectedLanguage");
+}
+
+// Function to set the selected language
+function setSavedLanguage(lang) {
+    localStorage.setItem("selectedLanguage", lang);
+}
+
+// Function to apply the saved language
+function applySavedLanguage() {
+    let lang = getSavedLanguage();
+    if (lang && lang !== "en") {
+        let select = document.querySelector(".goog-te-combo");
+        if (select) {
+            select.value = lang;
+            select.dispatchEvent(new Event("change"));
+        }
+    }
+}
+
+// Wait for Google Translate to load and apply the saved language
+document.addEventListener("DOMContentLoaded", function () {
+    setTimeout(applySavedLanguage, 1000);
+
+    document.addEventListener("change", function (event) {
+        if (event.target.classList.contains("goog-te-combo")) {
+            setSavedLanguage(event.target.value);
+        }
+    });
+});
+
+
+document.addEventListener("contextmenu", function (e) {
+    e.preventDefault(); // Disable right-click
+});
+
+document.addEventListener("keydown", function (e) {
+    if (e.ctrlKey && e.key === "u") {
+        e.preventDefault(); // Disable Ctrl+U
+    }
+    if (e.ctrlKey && e.shiftKey && e.key === "I") {
+        e.preventDefault(); // Disable Ctrl+Shift+I (DevTools)
+    }
+    if (e.key === "F12") {
+        e.preventDefault(); // Disable F12 (DevTools)
+    }
+});
+    </script>
+</body>
+</html>
