@@ -1,0 +1,109 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Signup</title>
+    <link rel="icon" href="assets/images/favicon.ico">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="login&signup.css">
+</head>
+<body>
+    <div class="main-container">
+        
+        <div class="video-container">
+            <video autoplay loop muted class="background-video">
+                <source src="vedeo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        
+        <div class="form-wrapper">
+            <div class="container" id="login-container">
+                <h2>Login</h2>
+                <form>
+                    <div class="input-group">
+                        <label for="login-email"><i class='bx bx-user'></i></label>
+                        <input type="email" id="login-email" placeholder="Username" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="login-password"><i class='bx bx-lock'></i></label>
+                        <input type="password" id="login-password" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="btn">Log in</button>
+                </form>
+                <p class="toggle-link">If you don't have an account? <a href="#" onclick="toggleForm()">Sign up</a></p>
+
+            </div>
+
+            <div class="container" id="signup-container" style="display: none;">
+                <h2>Sign Up</h2>
+                <form>
+                    <div class="input-group">
+                        <label for="signup-firstname"><i class='bx bx-user'></i></label>
+                        <input type="text" id="signup-firstname" placeholder="First Name" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="signup-lastname"><i class='bx bx-user'></i></label>
+                        <input type="text" id="signup-lastname" placeholder="Last Name" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="signup-birthdate"><i class='bx bx-calendar'></i></label>
+                        <input type="date" id="signup-birthdate" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="signup-idnumber"><i class='bx bxs-id-card'></i></label>
+                        <input type="number" id="signup-idnumber" placeholder="Enter your Id number" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="signup-number"><i class='bx bxs-contact' ></i></label>
+                        <input type="number" id="signup-number" placeholder="Enter your number" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="signup-gender"><i class='bx bx-male-female'></i></label>
+                        <select id="signup-gender" required>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="signup-nationality"><i class='bx bx-globe'></i></label>
+                        <select id="signup-nationality" required>
+                            <option value="USA">USA</option>
+                            <option value="Canada">Canada</option>
+                            <option value="UK">UK</option>
+                            <option value="India">India</option>
+                            <option value="Australia">Australia</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="signup-profile-picture"><i class='bx bx-image'></i></label>
+                        <input type="file" id="signup-profile-picture" accept="image/*" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="signup-password"><i class='bx bx-lock'></i></label>
+                        <input type="password" id="signup-password" placeholder="Create Password" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="signup-confirm-password"><i class='bx bx-lock'></i></label>
+                        <input type="password" id="signup-confirm-password" placeholder="Verify Password" required>
+                    </div>
+                    <button type="submit" class="btn">Sign up</button>
+                </form>
+                <p class="toggle-link">Already have an account sign in? <a href="#" onclick="toggleForm()">Sign in</a></p>
+                
+            </div>
+              
+
+                 
+
+    </div>
+
+     
+
+
+    <script src="login&signup.js"></script>
+</body>
+</html>

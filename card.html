@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document cards</title>
+    <link rel="stylesheet" href="card.css">
+    <link rel="icon" href="assets/images/favicon.ico">
+    <!-- Add Bixicon -->
+    <link href="https://cdn.jsdelivr.net/npm/bixicons@1.0.0/dist/css/bixicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+
+</head>
+<body>
+
+    <!-- Admin Notification -->
+    <div class="admin-notification">
+        <i class="bixicon bixicon-bell"></i>&nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; Thank you for using our services<br>
+         And download soft copy or conduct document founder for those&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  information below!
+    </div>
+
+    <div class="container">
+        <!-- ID Card -->
+        <div class="id-card" id="id-card">
+            <div class="top-design"></div>
+            <div class="profile">
+                <img src="assets/images/IT2.jpg" alt="Employee Photo">
+            </div>
+            <div class="info">
+                <h2>Antonia Valeria Iulia</h2>
+                <p class="role">EMPLOYEE</p>
+                <p class="office">General Managing Office 2A</p>
+                <p class="id-number">ID : <span>000000056784</span></p>
+            </div>
+            <div class="qr-code">
+                <img src="assets/images/QR img.png" alt="QR Code">
+            </div>
+            <div class="company-footer">
+                <p>COMPANY NAME</p>
+            </div>
+        </div>
+
+        <!-- Personal Address Card -->
+        <div class="card" id="personal-card">
+            <img src="assets/images/doctor1.jpg" alt="Profile Picture" class="profile-img">
+            <h2 class="name">Nadine</h2>
+            <p class="info"><strong>Gender:</strong> Female</p>
+            <p class="info"><strong>Address:</strong> 1234 Elm Street, Province: Musanze</p>
+            <p class="info"><strong>Country:</strong> Country: Rwanda</p>
+            <p class="info"><strong>City:</strong>Musanze city</p>
+            <p class="info"><strong>Province:</strong> Province: Northern</p>
+            <p class="info"><strong>Email:</strong> Nadine@gmail.com</p>
+            <p class="info"><strong>Phone:</strong> (+250) 780-890-234</p>
+            <p class="info"><strong>Website:</strong> <a href="http://www.Doctor-Nadine.com" target="_blank">www.DoctorNadine.com</a></p>
+        </div>
+<br>
+<div class="last">
+ <div class="button-container">
+     <button id="downloadButton" class="btn"  onclick="downloadApp('app1')">
+      <i class="bx bx-download"></i> Download Image
+    </button>
+      <button id="homeButton" class="btn" onclick="goToHome()">
+       <i class="bx bx-home"></i> Go to Home
+     </button>
+  </div>
+</div>
+
+     <script src="function.js"></script>
+
+    <script src="card.js"></script>
+    <!-- html2canvas for capturing the cards as images -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+</body>
+</html>

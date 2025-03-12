@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <link rel="icon" href="assets/images/favicon.ico">
+    <link rel="stylesheet" href="servicces.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="translate.css">
+    <script src="servicces.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">BIKA <span style="color: antiquewhite;">Doc</span> <span style="color: darkseagreen;">Hub</span></div>
+            <button class="menu-icon"><i class='bx bx-menu'></i></button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="servicces.html">Our Services</a></li>
+                <li><a href="contact-2.html">Contact</a></li>
+ <!-- Google Translate Dropdown -->
+ <li class="translate-container"><span style="color: rgb(201, 201, 65);">lang</span>
+    <i class='bx bx-globe translate-icon' onclick="toggleGoogleTranslate()"></i>
+    <div id="google_translate_dropdown" class="translate-dropdown">
+        <div id="google_translate_element"></div>
+    </div>
+</li>
+
+                <li><a href="login&signup.html"><button class="btn">Signup</button></a></li>
+            </ul>
+            <div class="settings">
+                <i class='bx bx-cog settings-icon'></i>
+                <div class="settings-menu">
+                    <button id="toggle-theme"><i class='bx bx-moon'></i> Dark Mode</button>
+                   <a href="dashbord.html"> <button id="account-settings"><i class='bx bx-user'></i> Account Settings</button></a>
+                </div>
+            </div>
+        </nav>
+    </header>
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Lost Document Help</h1>
+    <p>Get assistance with Bika Doc Hub quickly and efficiently!</p>
+</section>
+
+<!-- How to Report Lost Documents -->
+<section class="how-to-report">
+    <h2>How to Report a Lost Document</h2>
+    <div class="report-steps">
+        <div class="step">
+            <i class="bix bix-file-archive"></i>
+            <h3>Step 1 Search & Identify</h3>
+            <p>🔍 Enter your document details into our smart search engine and browse through our verified lost document listings to check if yours has been found. </p>
+        </div>
+        <div class="step">
+            <i class="bix bix-exclamation-circle"></i>
+            <h3>Step 2 Claim & Verify</h3>
+            <p>✅ Submit a claim request for your document. Our secure system ensures only the rightful owner can reclaim it through identity verification and proof of ownership.</p>
+        </div>
+        <div class="step">
+            <i class="bix bix-check-circle"></i>
+            <h3>Step 3 Receive & Reunite</h3>
+            <p>📦 Choose a pickup or delivery option that suits you. Collect it from a verified location, or have it safely delivered to your doorstep—fast, secure, and hassle-free!
+
+            </p>
+        </div>
+    </div>
+    <br>
+    <button id="goBackButton"><i class="fa-solid fa-arrow-right"></i> Report document</button>
+
+</section>
+<!-- buttons-->
+<div class="container" id="mainPage">
+<div class="button-row">
+    <button class="location-btn" data-target="hospitalPage"><i class='fas fa-hospital'></i> Hospital</button>
+    <button class="location-btn" data-target="schoolsPage"><i class='fas fa-school'></i> Schools</button>
+    <button class="location-btn" data-target="banksPage"><i class='fas fa-university'></i> Banks</button>
+    <button class="location-btn" data-target="marketsPage"><i class='fas fa-shopping-cart'></i> Markets</button>
+    <button class="location-btn" data-target="airportPage"><i class='fas fa-plane'></i> Airport</button>
+    <button class="location-btn" data-target="policePage"><i class='fas fa-balance-scale'></i> Police Station</button>
+    <button class="location-btn" data-target="hotelsPage"><i class='fas fa-hotel'></i> Hotels</button>
+    <button class="location-btn" data-target="restaurantsPage"><i class='fas fa-utensils'></i> Restaurants</button>
+    <button class="location-btn" data-target="organizationsPage"><i class='fas fa-building'></i> Big Organizations</button>
+    <button class="location-btn" data-target="companiesPage"><i class='fas fa-industry'></i> Companies</button>
+    <button class="location-btn" data-target="businessPage"><i class='fas fa-briefcase'></i> Business Enterprises</button>
+    <button class="location-btn" data-target="factoriesPage"><i class='fas fa-cogs'></i> Factories & Industries</button>
+</div>
+<div class="button-row">
+    <button class="location-btn" data-target="hospitalPage"><i class='fas fa-hospital'></i> Hospital</button>
+    <button class="location-btn" data-target="schoolsPage"><i class='fas fa-school'></i> Schools</button>
+    <button class="location-btn" data-target="banksPage"><i class='fas fa-university'></i> Banks</button>
+    <button class="location-btn" data-target="marketsPage"><i class='fas fa-shopping-cart'></i> Markets</button>
+    <button class="location-btn" data-target="airportPage"><i class='fas fa-plane'></i> Airport</button>
+    <button class="location-btn" data-target="policePage"><i class='fas fa-balance-scale'></i> Police Station</button>
+    <button class="location-btn" data-target="hotelsPage"><i class='fas fa-hotel'></i> Hotels</button>
+    <button class="location-btn" data-target="restaurantsPage"><i class='fas fa-utensils'></i> Restaurants</button>
+    <button class="location-btn" data-target="organizationsPage"><i class='fas fa-building'></i> Big Organizations</button>
+    <button class="location-btn" data-target="companiesPage"><i class='fas fa-industry'></i> Companies</button>
+    <button class="location-btn" data-target="businessPage"><i class='fas fa-briefcase'></i> Business Enterprises</button>
+    <button class="location-btn" data-target="factoriesPage"><i class='fas fa-cogs'></i> Factories & Industries</button>
+</div>
+</div>
+
+<div id="hospitalPage" class="hidden full-page">
+    <button class="go-back-btn"><i class='fas fa-arrow-left'></i> Go Back</button>
+    <h1>Hospital - Found Documents</h1>
+    <div class="document-list">
+        <div class="document-item">
+            <img src="assets/images/doctor1.jpg" alt="Person">
+            <div class="info">
+                <h2>Nurse Nadine</h2>
+                <p>Document: Insuarence card</p>
+                <img src="assets/images/card.JPG" alt="Document">
+                <button class="view-btn" onclick="viewImage('assets/images/doc.png')">+</button>
+               
+            </div>
+            <!-- img overlay -->
+            <div class="image-overlay" id="imageOverlay">
+                <span class="close-btn" onclick="closeImage()">&times;</span>
+                <img id="overlayImage" src="" alt="Enlarged Image">
+            </div>
+            <button class="clam" onclick="goToHome()">Claim</button>
+        </div>
+    </div>
+    </div>
+    
+    <div id="schoolsPage" class="hidden full-page">
+    <button class="go-back-btn"><i class='fas fa-arrow-left'></i> Go Back</button>
+    <h1>Schools - Found Documents</h1>
+    <div class="document-list">
+        <div class="document-item">
+            <img src="assets/images/student.JPG" alt="Student">
+            <div class="info">
+                <h2>MANZI Landry</h2>
+                <p>Document: Student Card</p>
+                <img src="assets/images/card.JPG" alt="Student ID">
+            </div>
+            <button class="clam" onclick="goToHome()">Claim</button>
+        </div>
+    </div>
+    </div>
+    
+    <div id="banksPage" class="hidden full-page">
+    <button class="go-back-btn"><i class='fas fa-arrow-left'></i> Go Back</button>
+    <h1>Banks - Found Documents</h1>
+    <div class="document-list">
+        <div class="document-item">
+            <img src="assets/images/bank.jpg" alt="Person">
+            <div class="info">
+                <h2>NSHIMIYIMANA Elier</h2>
+                <p>Document: Bank Passbook</p>
+                <img src="assets/images/card.JPG" alt="Bank Passbook">
+            </div>
+            <button class="clam" onclick="goToHome()">Claim</button>
+        </div>
+    </div>
+    </div>
+    
+    <!-- Add more hidden pages for each button here -->
+    <div id="marketsPage" class="hidden full-page">
+    <button class="go-back-btn"><i class='fas fa-arrow-left'></i> Go Back</button>
+    <h1>Market - Found Documents</h1>
+    <div class="document-list">
+        <div class="document-item">
+            <img src="assets/images/markert.jpg" alt="Person">
+            <div class="info">
+                <h2>IRANZI Elia</h2>
+                <p>Document: Tax Forms</p>
+                <img src="assets/images/card.JPG" alt="Bank Passbook">
+            </div>
+            <button class="clam" onclick="goToHome()">Claim</button>
+        </div>
+    </div>
+    </div>
+    
+    <div id="airportPage" class="hidden full-page">
+    <button class="go-back-btn"><i class='fas fa-arrow-left'></i> Go Back</button>
+    <h1>Airport - Found Documents</h1>
+    <div class="document-list">
+        <div class="document-item">
+            <img src="assets/images/airport.jpg" alt="Person">
+            <div class="info">
+                <h2>MUGISHA Promise</h2>
+                <p>Document: Ticket</p>
+                <img src="assets/images/card.JPG" alt="Bank Passbook">
+            </div>
+            <button class="clam" onclick="goToHome()">Claim</button>
+        </div>
+    </div>
+    </div>
+    
+    <div id="policePage" class="hidden full-page">
+    <button class="go-back-btn"><i class='fas fa-arrow-left'></i> Go Back</button>
+    <h1>Police - Found Documents</h1>
+    <div class="document-list">
+        <div class="document-item">
+            <img src="assets/images/police.jpg" alt="Person">
+            <div class="info">
+                <h2>MUSAFIRI Arnold</h2>
+                <p>Document: Social Security Cards</p>
+                <img src="assets/images/card.JPG" alt="Bank Passbook">
+            </div>
+            <button class="clam" onclick="goToHome()">Claim</button>
+        </div>
+    </div>
+    </div>
+    
+    <div id="hotelsPage" class="hidden full-page">
+    <button class="go-back-btn"><i class='fas fa-arrow-left'></i> Go Back</button>
+    <h1>Hotels - Found Documents</h1>
+    <div class="document-list">
+        <div class="document-item">
+            <img src="assets/images/hotel.jpg" alt="Person">
+            <div class="info">
+                <h2>MUGISHA Boy</h2>
+                <p>Document: ID card</p>
+                <img src="assets/images/card.JPG" alt="Bank Passbook">
+            </div>
+            <button class="clam" onclick="goToHome()">Claim</button>
+        </div>
+    </div>
+    </div>
+    
+    <div id="restaurantsPage" class="hidden full-page">
+    <button class="go-back-btn"><i class='fas fa-arrow-left'></i> Go Back</button>
+    <h1>Restaurant - Found Documents</h1>
+    <div class="document-list">
+        <div class="document-item">
+            <img src="assets/images/restorant.jpg" alt="Person">
+            <div class="info">
+                <h2>MURISA Kenzo</h2>
+                <p>Document: Financial Statements</p>
+                <img src="assets/images/card.JPG" alt="Bank Passbook">
+            </div>
+            <button class="clam" onclick="goToHome()">Claim</button>
+        </div>
+    </div>
+    </div>
+    
+    <div id="organizationsPage" class="hidden full-page">
+    <button class="go-back-btn"><i class='fas fa-arrow-left'></i> Go Back</button>
+    <h1>Organizations - Found Documents</h1>
+    <div class="document-list">
+        <div class="document-item">
+            <img src="assets/images/kenny.JPG" alt="Person">
+            <div class="info">
+                <h2>CYIZA Kenny</h2>
+                <p>Document: Diplomas</p>
+                <img src="assets/images/card.JPG" alt="Bank Passbook">
+            </div>
+            <button class="clam" onclick="goToHome()">Claim</button>
+        </div>
+    </div>
+    </div>
+    
+    <div id="companiesPage" class="hidden full-page">
+    <button class="go-back-btn"><i class='fas fa-arrow-left'></i> Go Back</button>
+    <h1>Companies - Found Documents</h1>
+    <div class="document-list">
+        <div class="document-item">
+            <img src="assets/images/company.jpg" alt="Person">
+            <div class="info">
+                <h2>NTACYOYANYIMYE Samuel</h2>
+                <p>Document: Bank card</p>
+                <img src="assets/images/card.JPG" alt="Bank Passbook">
+            </div>
+            <button class="clam" onclick="goToHome()">Claim</button>
+        </div>
+    </div>
+    </div>
+    
+    <div id="businessPage" class="hidden full-page">
+    <button class="go-back-btn"><i class='fas fa-arrow-left'></i> Go Back</button>
+    <h1>Business - Found Documents</h1>
+    <div class="document-list">
+        <div class="document-item">
+            <img src="assets/images/lost2.jpg" alt="Person">
+            <div class="info">
+                <h2>IYIZIRE Katty</h2>
+                <p>Document:Driving license</p>
+                <img src="assets/images/card.JPG" alt="Bank Passbook">
+            </div>
+            <button class="clam" onclick="goToHome()">Claim</button>
+        </div>
+    </div>
+    </div>
+    
+    <div id="factoriesPage" class="hidden full-page">
+    <button class="go-back-btn"><i class='fas fa-arrow-left'></i> Go Back</button>
+    <h1>Factories - Found Documents</h1>
+    <div class="document-list">
+        <div class="document-item">
+            <img src="assets/images/factory.jpg" alt="Person">
+            <div class="info">
+                <h2>ISHIMWE Gilbert</h2>
+                <p>Document: UPI</p>
+                <img src="assets/images/card.JPG" alt="Bank Passbook">
+            </div>
+            <button class="clam" onclick="goToHome()">Claim</button>
+            </div>
+        </div>
+    </div>
+ 
+
+<div class="poeple-search">
+<div class="search-container">
+    <i class='bx bx-search search-icon'></i>
+    <h2>Lost Documents</h2>
+</div>
+<div class="containerlist">
+    <div class="card">
+        <div class="icons">
+            <i class='bx bx-show eye' onclick="toggleDetails(0, this)"></i>
+        </div>
+        <img src="assets/images/nigger1.jpg" alt="User">
+        <h3>Johnny Mugisha</h3>
+        <p>Passport</p>
+        <div class="details">
+            <p>Address: KIGALI-Kicukiro</p>
+            <p>Phone: +250 797 880 110</p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="icons">
+            <i class='bx bx-show eye' onclick="toggleDetails(1, this)"></i>
+        </div>
+        <img src="assets/images/cyuci1.jpg" alt="User">
+        <h3>Jane Uwimana</h3>
+        <p>ID Card</p>
+        <div class="details">
+            <p>Address: RUHANGO-Buhanda</p>
+            <p>Phone: +250 737 990 550</p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="icons">
+            <i class='bx bx-show eye' onclick="toggleDetails(2, this)"></i>
+        </div>
+        <img src="assets/images/nigger2.jpg" alt="User">
+        <h3>Michael HABIMANA</h3>
+        <p>Driver's License</p>
+        <div class="details">
+            <p>Address: RUBAVU-Gisenyi</p>
+            <p>Phone: +250 727 000 890</p>        </div>
+    </div>
+    <div class="card">
+        <div class="icons">
+            <i class='bx bx-show eye' onclick="toggleDetails(3, this)"></i>
+        </div>
+        <img src="assets/images/beauty.jpg" alt="User">
+        <h3>UWASE Uwase</h3>
+        <p>Birth Certificate</p>
+        <div class="details">
+            <p>Address: KIGALI-Kicukiro</p>
+            <p>Phone: +250 787 890 890</p>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- people seen -->
+<div class="seen">
+  <div class="search-wrapper">
+        <i class="bx bx-check-circle search-icon-wrapper"></i>
+        <h2>Found Document Testimonials</h2>
+    </div>
+
+    <div class="testimonial-container">
+        <!-- Card 1 -->
+        <div class="testimonial-card">
+            <div class="icon-group">
+                <i class="bx bx-show view-story-icon" onclick="toggleStory(0, this)"></i>
+            </div>
+            <img src="assets/images/nigger3.jpg" alt="User">
+            <div>
+                <h3>Daniel NGABO</h3>
+                <p class="testimonial-comment">"Found this passport while traveling. Glad I could help! ❤️👍"</p>
+            </div>
+            <div class="full-comment-story">
+                <p>"I was walking through the park when I noticed a small bag left behind. Inside, I found the passport of John Doe. After a little research, I found a contact number and immediately reached out to return it. I'm happy to help reunite it with its owner!"</p>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="testimonial-card">
+            <div class="icon-group">
+                <i class="bx bx-show view-story-icon" onclick="toggleStory(1, this)"></i>
+            </div>
+            <img src="assets/images/cyuci3.jpg" alt="User">
+            <div>
+                <h3>Tina MANZI</h3>
+                <p class="testimonial-comment">"I found this ID card at the park. Returning it now! ❤️👍"</p>
+            </div>
+            <div class="full-comment-story">
+                <p>"While I was out jogging in the park, I spotted an ID card lying on the ground. It didn’t take long to trace the owner's name and return it to them. It feels good to do something positive!"</p>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="testimonial-card">
+            <div class="icon-group">
+                <i class="bx bx-show view-story-icon" onclick="toggleStory(2, this)"></i>
+            </div>
+            <img src="assets/images/nigger4.jpg" alt="User">
+            <div>
+                <h3>Fred KALISA</h3>
+                <p class="testimonial-comment">"This driver's license was left behind in the store. Happy to return it! ❤️👍"</p>
+            </div>
+            <div class="full-comment-story">
+                <p>"I was shopping when I found a driver's license in the checkout line. After contacting the owner, I was able to return it to them. It’s always nice to see a smile when someone gets their lost item back!"</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- people seen -->
+<div class="chat-widget">
+    <div class="chat-header" onclick="toggleChat()">
+        <img src="assets/images/team.jpg" alt="Support Team" class="chat-team-img">
+        <span>Chat with Us</span>
+        <i class='bx bx-message-dots'></i>
+        <span class="close-btn" onclick="closeChat(event)">×</span> <!-- Close button -->
+    </div>
+    <div class="chat-body" id="chatBody">
+        <div class="chat-messages" id="chatMessages"></div>
+        <div class="input-container">
+            <input type="text" id="userInput" placeholder="Type your message..." onkeypress="handleKeyPress(event)">
+            <button onclick="sendMessage()"><i class='bx bx-send'></i></button>
+        </div>
+    </div>
+</div>
+<div class="people-seen">
+    <!-- Comment Section for User -->
+    <div class="user-comment-section">
+        <h3>Leave a Comment</h3>
+        <input type="text" id="userComment" placeholder="Write a comment...">
+        <button onclick="postComment()">
+            <span>Post Comment</span>
+            <i class="fas fa-paper-plane"></i> <!-- Send icon -->
+        </button>
+    </div>
+</div>
+    <!-- Back to Top Button -->
+    <button id="backToTop">
+        <i class='bx bx-up-arrow-alt'></i>
+    </button>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="footer-container">
+        <!-- Logo and Description -->
+        <div class="footer-logo">
+            <div class="logo">BIKA <span style="color: antiquewhite;">Doc</span> <span style="color: darkseagreen;">Hub</span></div>
+            <p>Helping you recover lost documents with ease and security.</p>
+        </div>
+  
+        <!-- Useful Links -->
+        <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">How to Report a Lost Document</a></li>
+                <li><a href="#">Document Recovery Process</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Account Support</a></li>
+                <li><a href="#">Community Forum</a></li>
+            </ul>
+        </div>
+  
+        <!-- Contact Info -->
+        <div class="footer-contact">
+            <h3>Contact Us</h3>
+            <p><i class="bix bix-phone"></i> Phone: +250 786 378 402</p>
+            <p><i class="bix bix-envelope"></i> Email:bigsamdmd@gmail.com</p>
+        </div>
+        <!-- Social Media Links -->
+        <div class="footer-social">
+            <h3>Follow Us</h3>
+            <a href="#" class="social-icon"><i class='bx bxl-facebook-circle'></i>
+            <a href="#" class="social-icon"><i class='bx bxl-twitter'></i>
+            <a href="#" class="social-icon"><i class='bx bxl-instagram-alt' ></i>
+            <a href="#" class="social-icon"><i class='bx bxl-linkedin-square' ></i>
+        </div>
+    </div>
+  
+    <!-- Copyright Section -->
+    <div class="footer-bottom">
+        <p></p>2025 BIKA <span style="color: antiquewhite;">Doc</span> <span style="color: darkseagreen;">Hub</span>.</p>
+    </div>
+    
+  </footer>
+
+  <script type="text/javascript" src="translate.js"></script>
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>

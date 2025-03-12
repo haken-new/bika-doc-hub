@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Found Documents - Testimonials</title>
+    <li/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css">nk rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+            box-sizing: border-box;
+        }
+        .search-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 30px;
+            font-size: 20px;
+        }
+        .search-icon-wrapper {
+            font-size: 30px;
+            cursor: pointer;
+            color: #4CAF50;
+        }
+        .search-icon-wrapper:hover {
+            color: #388E3C;
+        }
+        .testimonial-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            width: 100%;
+            flex-wrap: wrap;
+            padding: 10px;
+        }
+        .testimonial-card {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            position: relative;
+            width: 100%;
+            max-width: 350px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        .testimonial-card:hover {
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
+        }
+        .testimonial-card img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+        .testimonial-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .testimonial-comment {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.5;
+        }
+        .view-story-icon {
+            font-size: 25px;
+            color: #2196F3;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: color 0.3s ease;
+        }
+        .view-story-icon:hover {
+            color: #1976D2;
+        }
+        .full-comment-story {
+            display: none;
+            font-size: 0.9rem;
+            color: #555;
+            margin-top: 15px;
+            text-align: left;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 6px;
+        }
+        .icon-group {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            gap: 10px;
+        }
+        .verified-icon {
+            font-size: 22px;
+            color: #4CAF50;
+        }
+        /* Style for Tick icon next to the heading */
+        .search-wrapper i {
+            font-size: 28px;
+            color: #4CAF50;
+            animation: tickAnimation 1s ease-in-out infinite;
+        }
+        @keyframes tickAnimation {
+            0% { transform: rotate(0deg); }
+            50% { transform: rotate(20deg); }
+            100% { transform: rotate(0deg); }
+        }
+
+        /* Updated User Comment Section */
+        .user-comment-section {
+            margin-top: 20px;
+            width: 100%;
+            max-width: 320px;  /* Reduced width */
+            padding: 5px 10px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;  /* Position for icons inside */
+            margin-bottom: 30px;
+        }
+
+        .user-comment-section input {
+            width: 100%;  /* Full width */
+            padding: 8px 10px;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            height: 40px;  /* Minimized height */
+            display: inline-block;
+        }
+
+        .user-comment-section button {
+            width: 100%;
+            padding: 10px;
+            font-size: 1.1rem;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .user-comment-section button:hover {
+            background-color: #388E3C;
+        }
+
+        .like-button {
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: #FF4081;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .testimonial-container {
+                padding: 0 20px;
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+            .testimonial-card {
+                max-width: 100%;
+            }
+            .testimonial-card h3 {
+                font-size: 1.2rem;
+            }
+            .testimonial-comment {
+                font-size: 0.9rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .search-wrapper h2 {
+                font-size: 18px;
+            }
+            .testimonial-card img {
+                width: 90px;
+                height: 90px;
+            }
+            .testimonial-card h3 {
+                font-size: 1.1rem;
+            }
+            .testimonial-comment {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="search-wrapper">
+        <i class="bx bx-check-circle search-icon-wrapper"></i>
+        <h2>Found Document Testimonials</h2>
+    </div>
+
+    <div class="testimonial-container">
+        <!-- Card 1 -->
+        <div class="testimonial-card">
+            <div class="icon-group">
+                <i class="bx bx-show view-story-icon" onclick="toggleStory(0, this)"></i>
+            </div>
+            <img src="https://via.placeholder.com/120" alt="User">
+            <div>
+                <h3>John Doe</h3>
+                <p class="testimonial-comment">"Found this passport while traveling. Glad I could help! ❤️👍"</p>
+            </div>
+            <div class="full-comment-story">
+                <p>"I was walking through the park when I noticed a small bag left behind. Inside, I found the passport of John Doe. After a little research, I found a contact number and immediately reached out to return it. I'm happy to help reunite it with its owner!"</p>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="testimonial-card">
+            <div class="icon-group">
+                <i class="bx bx-show view-story-icon" onclick="toggleStory(1, this)"></i>
+            </div>
+            <img src="https://via.placeholder.com/120" alt="User">
+            <div>
+                <h3>Jane Smith</h3>
+                <p class="testimonial-comment">"I found this ID card at the park. Returning it now! ❤️👍"</p>
+            </div>
+            <div class="full-comment-story">
+                <p>"While I was out jogging in the park, I spotted an ID card lying on the ground. It didn’t take long to trace the owner's name and return it to them. It feels good to do something positive!"</p>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="testimonial-card">
+            <div class="icon-group">
+                <i class="bx bx-show view-story-icon" onclick="toggleStory(2, this)"></i>
+            </div>
+            <img src="https://via.placeholder.com/120" alt="User">
+            <div>
+                <h3>Michael Johnson</h3>
+                <p class="testimonial-comment">"This driver's license was left behind in the store. Happy to return it! ❤️👍"</p>
+            </div>
+            <div class="full-comment-story">
+                <p>"I was shopping when I found a driver's license in the checkout line. After contacting the owner, I was able to return it to them. It’s always nice to see a smile when someone gets their lost item back!"</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Comment Section for User -->
+    <div class="user-comment-section">
+        <h3>Leave a Comment</h3>
+        <input type="text" id="userComment" placeholder="Write a comment...">
+        <button onclick="postComment()">
+            <span>Post Comment</span>
+            <i class="fas fa-paper-plane"></i> <!-- Send icon -->
+        </button>
+    </div>
+
+    <script>
+        function toggleStory(index, element) {
+            const story = document.querySelectorAll('.full-comment-story')[index];
+            const eyeIcon = element;
+            if (story.style.display === 'block') {
+                story.style.display = 'none';
+                eyeIcon.classList.remove('bx-hide');
+                eyeIcon.classList.add('bx-show');
+            } else {
+                story.style.display = 'block';
+                eyeIcon.classList.remove('bx-show');
+                eyeIcon.classList.add('bx-hide');
+            }
+        }
+
+        function postComment() {
+            const userComment = document.getElementById('userComment').value;
+            if (userComment.trim() !== "") {
+                const commentContainer = document.createElement('div');
+                commentContainer.classList.add('testimonial-card');
+                
+                const commentText = document.createElement('p');
+                commentText.classList.add('testimonial-comment');
+                commentText.textContent = userComment + " ❤️👍";
+                
+                commentContainer.appendChild(commentText);
+
+                // Add the new comment at the top of the container
+                const container = document.querySelector('.testimonial-container');
+                container.insertBefore(commentContainer, container.firstChild);
+
+                // Clear the input field
+                document.getElementById('userComment').value = '';
+            }
+        }
+    </script>
+</body>
+</html>

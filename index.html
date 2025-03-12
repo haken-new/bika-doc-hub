@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bika Doc Hub</title>
+    <link rel="icon" href="assets/images/favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">BIKA <span style="color: antiquewhite;">Doc</span> <span style="color: darkseagreen;">Hub</span></div>
+            <button class="menu-icon"><i class='bx bx-menu'></i></button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="servicces.html">Our Services</a></li>
+                <li><a href="contact-2.html">Contact</a></li>
+            <!-- Google Translate Dropdown -->
+            <li class="translate-container"><span style="color: rgb(201, 201, 65);">lang</span>
+                <i class='bx bx-globe translate-icon' onclick="toggleGoogleTranslate()"></i>
+                <div id="google_translate_dropdown" class="translate-dropdown">
+                    <div id="google_translate_element"></div>
+                </div>
+            </li>
+
+                <li><a href="login&signup.html"><button class="btn">Signup</button></a></li>
+            </ul>
+            <div class="settings">
+                <i class='bx bx-cog settings-icon'></i>
+                <div class="settings-menu">
+                    <button id="toggle-theme"><i class='bx bx-moon'></i> Dark Mode</button>
+                   <a href="dashbord.html"> <button id="account-settings"><i class='bx bx-user'></i> Account Settings</button></a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section class="back">
+    <section class="hero">
+        <h1>How can we help you?</h1>
+        <p>Search here to get answers to your questions</p>
+      
+       
+
+    <div class="search-container">
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Search any Document">
+            <button onclick="performSearch()"><i class='bx bx-search'></i></button>
+        </div>
+        <div class="dropdown-list" id="dropdownList"></div>
+    </div>
+<br>
+<br>
+<br>
+    <!-- Pages -->
+    <div id="hospitalPage" class="content-page">
+        <h1>🏥 Hospital - Found Documents</h1>
+        <p>Details about hospital documents <a href="servicces.html">->View.</a></p>
+    </div>
+
+    <div id="schoolsPage" class="content-page">
+        <h1>🎓 Schools - Found Documents</h1>
+        <p>Details about School documents in School button<a href="servicces.html">->View.</a></p>
+    </div>
+
+    <div id="banksPage" class="content-page">
+        <h1>🏦 Banks - Found Documents</h1>
+        <p>Details about Banks documents in Banks button<a href="servicces.html">->View.</a></p>
+    </div>
+
+    <div id="marketsPage" class="content-page">
+        <h1>🛒 Markets - Found Documents</h1>
+        <p>Details about Markets documents in Market button<a href="servicces.html">->View.</a></p>
+    </div>
+
+    <div id="airportPage" class="content-page">
+        <h1>✈️ Airport - Found Documents</h1>
+        <p>Details about Airport documents in Airport button<a href="servicces.html">->View.</a></p>
+    </section>
+
+    </section>
+    <section class="categories">
+        <div class="category-grid">
+            <div class="category-card"><i class='bx bx-book'></i> Knowledge Base</div>
+            <div class="category-card"><i class='bx bx-group'></i> Community Forums</div>
+            <div class="category-card"><i class='bx bx-file'></i> Documentation</div>
+            <div class="category-card"><i class='bx bx-cog'></i> User Settings</div>
+            <div class="category-card"><i class='bx bx-bulb'></i> Advanced Usage</div>
+            <div class="category-card"><i class='bx bx-edit'></i> Formatting Content</div>
+        </div>
+    </section>
+    
+    <section class="how-it-works">
+        <h2>How BIKA <span style="color: antiquewhite;">Doc</span> <span style="color: darkseagreen;">Hub</span> Works</h2>
+        <div class="steps">
+            <div class="step">
+                <h3>1. Fast & Reliable Document Recovery</h3>
+                <p>🔍 Lost a document? Find it in seconds!
+                    Bika Doc Hub connects you to a vast database of recovered documents, making it easy to track down and reclaim what's yours—quickly and securely.</p>
+            </div>
+
+            <div class="step">
+              <h3>2. Smart Search & Instant Alerts</h3>
+              <p>📢 Never miss an update!
+                Our AI-powered search lets you locate documents effortlessly, and you’ll get instant alerts when a matching document is found—keeping you one step ahead.</p>
+          </div>
+
+
+          <div class="step">
+            <h3>3. Trusted Community & Verified Listings</h3>
+            <p>Every lost document is verified and listed by trusted sources, ensuring authenticity and security while preventing fraud—so you can trust what you find.</p>
+        </div>
+
+        <div class="step">
+          <h3>4. Easy Claim Process & 24/7 Support</h3>
+          <p>With our simple online claim process and 24/7 customer support, you can reunite with your lost documents without stress—anytime, anywhere.</p>
+      </div>
+
+      
+        </div>
+        <div class="icon-grid">
+            <div class="icon-card">
+                <i class='bx bx-play-circle'></i>
+                <p>Action Plan</p>
+            </div>
+            <div class="icon-card">
+                <i class='bx bx-cog'></i>
+                <p>Settings</p>
+            </div>
+            <div class="icon-card">
+                <i class='bx bx-cloud'></i>
+                <p>Cloud Storage</p>
+            </div>
+            <div class="icon-card">
+                <i class='bx bx-wrench'></i>
+                <p>More tools</p>
+            </div>
+            <div class="icon-card">
+                <i class='bx bx-bulb'></i>
+                <p>Doc ideas</p>
+            </div>
+            <div class="icon-card">
+                <i class='bx bx-rocket'></i>
+                <p>Doc Lounched</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="testimonials" id="Testimonials">
+        <p>Testimonials</p>
+      <div class="testimonial-content">
+          <div class="testimonial">
+              <div class="testimonial-item">
+                  <div class="profile">
+                      <p><img src="assets/images/master2.jpg" alt=""></p>
+                      <div class="descript">
+                          <h5>NSHIMIYIMANA Gilbert</h5>
+                          <span>Principal</span>
+                      </div>
+                  </div>
+                  <p><i class='bx bxs-quote-alt-left'></i> l lost my Passport but really this websity helped me alot, and l could encourage every one to use it. <i class='bx bxs-quote-alt-right'></i></p>
+              </div>
+              <div class="testimonial-item">
+                  <div class="profile">
+                      <p><img src="assets/images/dos.jpg" alt=""></p>
+                      <div class="descript">
+                          <h5>RUKUNDO Timothy</h5>
+                          <span>Director of Studies</span>
+                      </div>
+                  </div>
+                  <p><i class='bx bxs-quote-alt-left'></i> Wow thanks a lot for this! l was lost in finding students reports but this webite was the hero for me thanks. <i class='bx bxs-quote-alt-right'></i></p>
+              </div>
+              <div class="testimonial-item">
+                  <div class="profile">
+                      <p><img src="assets/images/Capture.jpg" alt=""></p>
+                      <div class="descript">
+                          <h5>James</h5>
+                          <span>Student</span>
+                      </div>
+                  </div>
+                  <p><i class='bx bxs-quote-alt-left'></i>  For sure l was going to shift my School becuase l had no second copy for my school repots but this website really! was amazing to me continue my studies thanks alot much respect. <i class='bx bxs-quote-alt-right'></i></p>
+              </div>
+          </div>
+      </div>
+  </div>
+  
+
+    <section class="founder">
+    <div class="fond">
+        <h2>Founder’s Comment</h2>
+        <div class="founder-card">
+            <img src="assets/images/Big-samco.JPG" alt="Founder">
+            <p>"We're always working to improve your experience. Thank you for choosing Bika Doc hub!"</p>
+            <h4>BIG Sam</h4>
+            <p>Founder & CEO</p>
+        </div>
+    </div>
+    </section>
+
+    <section class="video-section">
+        <h2>Watch Our Demo</h2>
+        <div class="video-container">
+            <video autoplay loop muted >
+                <source src="assets/images/background.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        
+    </section>
+
+      <!-- Back to Top Button -->
+      <button id="backToTop">
+        <i class='bx bx-up-arrow-alt'></i>
+    </button>
+
+    <script>
+       
+    </script>
+     <!-- Google Translate API -->
+     <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+     
+
+  <!-- Footer Section -->
+<footer>
+  <div class="footer-container">
+      <!-- Logo and Description -->
+      <div class="footer-logo">
+        <div class="logo">BIKA <span style="color: antiquewhite;">Doc</span> <span style="color: darkseagreen;">Hub</span></div>
+          <p>Helping you recover lost documents with ease and security.</p>
+      </div>
+
+      <!-- Useful Links -->
+      <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+              <li><a href="#">How to Report a Lost Document</a></li>
+              <li><a href="#">Document Recovery Process</a></li>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Account Support</a></li>
+              <li><a href="#">Community Forum</a></li>
+          </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="footer-contact">
+          <h3>Contact Us</h3>
+          <p><i class="bix bix-phone"></i> Phone: +250 786 378 402</p>
+          <p><i class="bix bix-envelope"></i> Email: bigsamdmd@gmail.com</p>
+      </div>
+
+      <!-- Social Media Links -->
+      <div class="footer-social">
+          <h3>Follow Us</h3>
+          <a href="#" class="social-icon"><i class='bx bxl-facebook-circle'></i>
+          <a href="#" class="social-icon"><i class='bx bxl-twitter'></i>
+          <a href="#" class="social-icon"><i class='bx bxl-instagram-alt' ></i>
+          <a href="#" class="social-icon"><i class='bx bxl-linkedin-square' ></i>
+      </div>
+  </div>
+
+  <!-- Copyright Section -->
+  <div class="footer-bottom">
+      <p>2025 BIKA <span style="color: antiquewhite;">Doc</span> <span style="color: darkseagreen;">Hub</span>..</p>
+  </div>
+  
+</footer>
+
+</body>
+</html>

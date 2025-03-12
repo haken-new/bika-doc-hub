@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Process</title>
+    <link rel="stylesheet" href="pay.css">
+    <link rel="icon" href="assets/images/favicon.ico">
+</head>
+<body>
+ <!-- Main Container (Payment method selection) -->
+<div class="container" id="main-container">
+    <p><span style="color: rgb(98, 98, 255); font-weight: bold;">Dear customer, you have to pay only an amount of 500rwf cash. </span></p>
+    <h2>Select Payment Method</h2>
+    
+    <div class="payment-option" onclick="selectPaymentMethod('bank')">
+        <input type="radio" name="payment" id="bank" value="bank">
+        <img src="assets/images/banklogo.jpg" alt="Bank Transfer" class="payment-icon">
+        <span>Bank Transfer</span>
+    </div>
+
+    <div class="payment-option" onclick="selectPaymentMethod('paypal')">
+        <input type="radio" name="payment" id="paypal" value="paypal">
+        <img src="assets/images/paypal.jpg" alt="PayPal" class="payment-icon">
+        <span>PayPal</span>
+    </div>
+
+    <div class="payment-option" onclick="selectPaymentMethod('mtn')">
+        <input type="radio" name="payment" id="mtn" value="mtn">
+        <img src="assets/images/mtn.jpeg" alt="MTN MoMo" class="payment-icon">
+        <span>MTN MoMo</span>
+    </div>
+
+    <div class="payment-option" onclick="selectPaymentMethod('airtel')">
+        <input type="radio" name="payment" id="airtel" value="airtel">
+        <img src="assets/images/aitel.jpg" alt="Airtel Money" class="payment-icon">
+        <span>Airtel Money</span>
+    </div>
+
+    <div class="payment-option" onclick="selectPaymentMethod('tigo')">
+        <input type="radio" name="payment" id="tigo" value="tigo">
+        <img src="assets/images/tigo.jpg" alt="Tigo Cash" class="payment-icon">
+        <span>Tigo Cash</span>
+    </div>
+     <!-- Back Button -->
+     <button onclick="window.location.href='index.html'">Back</button>
+</div>
+
+<!-- SSD Code Page for MTN -->
+<div class="page" id="mtn-ssd-code-page">
+    <h2>Enter SSD Code for MTN MoMo</h2>
+    <input type="text" id="mtn-ssd-code" class="input-field" placeholder="Enter by copying this *182*1*3035# SSD Code">
+    <button onclick="goBack()">Back</button>
+    <button onclick="enterAmountPage('mtn')">Continue</button>
+</div>
+
+<!-- SSD Code Page for Airtel -->
+<div class="page" id="airtel-ssd-code-page">
+    <h2>Enter SSD Code for Airtel Money</h2>
+    <input type="text" id="airtel-ssd-code" class="input-field" placeholder="Enter by copying this *182*1*3035# SSD Code">
+    <button onclick="goBack()">Back</button>
+    <button onclick="enterAmountPage('airtel')">Continue</button>
+</div>
+
+<!-- SSD Code Page for Tigo -->
+<div class="page" id="tigo-ssd-code-page">
+    <h2>Enter SSD Code for Tigo Cash</h2>
+    <input type="text" id="tigo-ssd-code" class="input-field" placeholder="Enter by copying this *182*1*3035# SSD Code">
+    <button onclick="goBack()">Back</button>
+    <button onclick="enterAmountPage('tigo')">Continue</button>
+</div>
+
+<!-- Amount Input Page for MTN -->
+<div class="page" id="mtn-amount-page">
+    <h2>Enter Amount for MTN MoMo</h2>
+    <input type="number" id="mtn-amount" class="input-field" placeholder="Amount to Send">
+    <button onclick="goBack()">Back</button>
+    <button onclick="confirmTransfer('mtn')">Continue</button>
+</div>
+
+<!-- Amount Input Page for Airtel -->
+<div class="page" id="airtel-amount-page">
+    <h2>Enter Amount for Airtel Money</h2>
+    <input type="number" id="airtel-amount" class="input-field" placeholder="Amount to Send">
+    <button onclick="goBack()">Back</button>
+    <button onclick="confirmTransfer('airtel')">Continue</button>
+</div>
+
+<!-- Amount Input Page for Tigo -->
+<div class="page" id="tigo-amount-page">
+    <h2>Enter Amount for Tigo Cash</h2>
+    <input type="number" id="tigo-amount" class="input-field" placeholder="Amount to Send">
+    <button onclick="goBack()">Back</button>
+    <button onclick="confirmTransfer('tigo')">Continue</button>
+</div>
+
+<!-- Bank Payment Details Page -->
+<div class="page" id="bank-page">
+    <h2>Enter Bank Details</h2>
+    <div class="input-container">
+        <input type="text" id="bank-name" class="input-field" placeholder="Enter Bank Name">
+    </div>
+    <div class="input-container">
+        <input type="text" id="account-number" class="input-field" placeholder="Enter Account Number">
+    </div>
+    <button onclick="goBack()">Back</button>
+    <button onclick="enterAmountPage('bank')">Continue</button>
+</div>
+
+<!-- PayPal Payment Details Page -->
+<div class="page" id="paypal-page">
+    <h2>Enter PayPal Details</h2>
+    <div class="input-container">
+        <input type="email" id="paypal-email" class="input-field" placeholder="Enter PayPal Email">
+    </div>
+    <button onclick="goBack()">Back</button>
+    <button onclick="enterAmountPage('paypal')">Continue</button>
+</div>
+
+
+<!-- Amount Input Page -->
+<div class="page" id="amount-page">
+    <h2>Enter Amount</h2>
+    <div class="input-container">
+        <input type="number" id="amount-input" class="input-field" placeholder="Enter Amount">
+    </div>
+    <button onclick="goBack()">Back</button>
+    <button onclick="showPINPage(selectedMethod)">Continue</button> 
+</div>
+
+<!-- PIN Entry Page -->
+<div class="page" id="pin-page" style="display: none;">
+    <h2>Enter PIN</h2>
+    <div class="input-container">
+        <input type="password" id="pin" class="input-field" placeholder="Enter Your PIN">
+        <span onclick="togglePassword('pin')"><i class="bx bx-show"></i></span>
+    </div>
+    <button onclick="goBack()">Back</button>
+    <button onclick="processPayment()">Confirm Payment</button>
+</div>
+
+    <div class="loading-overlay" id="loading-overlay">
+        <div class="loading-message">
+            <p>Processing transfer...</p>
+            <div class="dots">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="pay.js"></script>
+</body>
+</html>

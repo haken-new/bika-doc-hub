@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Found Documents - Testimonials</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+            box-sizing: border-box;
+        }
+        .search-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 30px;
+            font-size: 20px;
+        }
+        .search-icon {
+            font-size: 30px;
+            cursor: pointer;
+            color: #4CAF50;
+        }
+        .search-icon:hover {
+            color: #388E3C;
+        }
+        .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            width: 100%;
+            flex-wrap: wrap;
+            padding: 10px;
+        }
+        .card {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            position: relative;
+            width: 100%;
+            max-width: 350px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        .card:hover {
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
+        }
+        .card img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+        .card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .comment {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.5;
+        }
+        .eye {
+            font-size: 25px;
+            color: #2196F3;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: color 0.3s ease;
+        }
+        .eye:hover {
+            color: #1976D2;
+        }
+        .full-story {
+            display: none;
+            font-size: 0.9rem;
+            color: #555;
+            margin-top: 15px;
+            text-align: left;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 6px;
+        }
+        .icons {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            gap: 10px;
+        }
+        .verified {
+            font-size: 22px;
+            color: #4CAF50;
+        }
+        /* Style for Tick icon next to the heading */
+        .search-container i {
+            font-size: 28px;
+            color: #4CAF50;
+            animation: tickAnimation 1s ease-in-out infinite;
+        }
+        @keyframes tickAnimation {
+            0% { transform: rotate(0deg); }
+            50% { transform: rotate(20deg); }
+            100% { transform: rotate(0deg); }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+            .card {
+                max-width: 100%;
+            }
+            .card h3 {
+                font-size: 1.2rem;
+            }
+            .comment {
+                font-size: 0.9rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .search-container h2 {
+                font-size: 18px;
+            }
+            .card img {
+                width: 90px;
+                height: 90px;
+            }
+            .card h3 {
+                font-size: 1.1rem;
+            }
+            .comment {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="search-container">
+        <i class="bx bx-check-circle search-icon"></i>
+        <h2>Found Document Testimonials</h2>
+    </div>
+
+    <div class="container">
+        <!-- Card 1 -->
+        <div class="card">
+            <div class="icons">
+                <i class="bx bx-show eye" onclick="toggleStory(0, this)"></i>
+            </div>
+            <img src="https://via.placeholder.com/120" alt="User">
+            <div>
+                <h3>John Doe</h3>
+                <p class="comment">"Found this passport while traveling. Glad I could help! ❤️👍"</p>
+            </div>
+            <div class="full-story">
+                <p>"I was walking through the park when I noticed a small bag left behind. Inside, I found the passport of John Doe. After a little research, I found a contact number and immediately reached out to return it. I'm happy to help reunite it with its owner!"</p>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card">
+            <div class="icons">
+                <i class="bx bx-show eye" onclick="toggleStory(1, this)"></i>
+            </div>
+            <img src="https://via.placeholder.com/120" alt="User">
+            <div>
+                <h3>Jane Smith</h3>
+                <p class="comment">"I found this ID card at the park. Returning it now! ❤️👍"</p>
+            </div>
+            <div class="full-story">
+                <p>"While I was out jogging in the park, I spotted an ID card lying on the ground. It didn’t take long to trace the owner's name and return it to them. It feels good to do something positive!"</p>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card">
+            <div class="icons">
+                <i class="bx bx-show eye" onclick="toggleStory(2, this)"></i>
+            </div>
+            <img src="https://via.placeholder.com/120" alt="User">
+            <div>
+                <h3>Michael Johnson</h3>
+                <p class="comment">"This driver's license was left behind in the store. Happy to return it! ❤️👍"</p>
+            </div>
+            <div class="full-story">
+                <p>"I was shopping when I found a driver's license in the checkout line. After contacting the owner, I was able to return it to them. It’s always nice to see a smile when someone gets their lost item back!"</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleStory(index, element) {
+            const story = document.querySelectorAll('.full-story')[index];
+            const eyeIcon = element;
+            if (story.style.display === 'block') {
+                story.style.display = 'none';
+                eyeIcon.classList.remove('bx-hide');
+                eyeIcon.classList.add('bx-show');
+            } else {
+                story.style.display = 'block';
+                eyeIcon.classList.remove('bx-show');
+                eyeIcon.classList.add('bx-hide');
+            }
+        }
+    </script>
+</body>
+</html>
